@@ -1,0 +1,17 @@
+{% extends  "base.html" %}
+
+{% block tittle %}Noticias y actividades{% endblock %}
+
+{% block cuerpo %}
+<h1>Noticias y actividades</h1>
+	{% for noticia in noticias %}
+		<article>
+			<fieldset>
+				<legend><h3>{{noticia.titulo}}</h3></legend>
+					<p>{{noticia.contenido}}</p>
+					<p>{{noticia.usuario_publicador}}, {{noticia.fecha_publicacion|timesince}}</p>
+					<a class="mas" href="{% url 'noticia' noticia.pk %}">Leer noticia completa</a>
+			</fieldset>
+		</article>
+	{% endfor %}
+{% endblock %}

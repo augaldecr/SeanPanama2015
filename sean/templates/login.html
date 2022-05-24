@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+ 
+{% block tittle %}Ingreso al sistema{% endblock %}
+
+{% block cuerpo %}
+<fieldset class="ingreso">
+    <legend><h1>Ingreso al sistema</h1></legend>
+    <div class="tabla" id="login">
+        <form method="post" action="{% url 'django.contrib.auth.views.login' %}">{% csrf_token %}
+            {{form.as_p}}
+            <p>
+            <input type="submit" value="Ingresar"/>
+            <input type="hidden" name="next" value="{{ next }}"/>
+        </form>
+    </div>
+    {% if form.errors %}
+        <p>El usuario o contraseña que usted digito son incorrectos, digite un usuario y contraseña validos</p>
+    {% endif %}
+</fieldset>
+{% endblock %}

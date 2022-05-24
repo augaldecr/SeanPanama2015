@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="es">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{% block tittle %}Titulo de mi página{% endblock %}</title>
+	<meta name="description" content="En esta pagina web usted encontrará información acerca del ministerio Sean Panamá, tal como nuestra visión, cursos y enlaces de bendición para su vida espiritual">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	{% load static from staticfiles %}
+	<link rel="stylesheet" href="{% static "css/normalize.css" %}">
+	<link rel="stylesheet" href="{% static "css/main.css" %}">
+	<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{% static "css/fontello.css" %}">
+	<script src="{% static "js/vendor/modernizr-2.6.2.min.js" %}"></script>
+</head>
+<body>
+	<!--[if lt IE 7]>
+	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<div class="top_green"></div>
+	<div class="wrapper">
+		<header>
+			<a href="{% url 'login' %}">
+				<figure>
+					<img class="logo_sean" src="{% static "img/logo.gif" %}" alt="Ingresar al sistema" />
+					<figcaption>Ingreso al sistema</figcaption>
+				</figure>
+			</a>
+			<h2>Educación cristiana por medio de sean en Panamá</h2>
+				<!--div class="social">
+					<ul>
+						<li>
+							<a class="vinculo_social" id="facebook" href="#">Facebook</a>
+						</li>
+						<li>
+							<a class="vinculo_social" id="twitter" href="#">Twitter</a>
+						</li>
+						<li>
+							<a class="vinculo_social" id="google" href="#">Google+</a>
+						</li>
+					</ul>
+				</div-->
+			</header>
+			<nav>
+				<ul>
+					{% for item in menu %}
+					<li>
+						<a class="vinculo {{item.clase}} {% if item.active %} posicionado {% endif %}" href="{{item.url}}" >{{item.name}}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</nav>
+			<div class="slider_container">
+				<div class="slide_container">
+					<div class="slide" data-background="{% static "img/slide1.jpg" %}"></div>
+					<div class="slide" data-background="{% static "img/slide2.jpg" %}"></div>
+					<div class="slide" data-background="{% static "img/slide3.jpg" %}"></div>
+					<button class="prev">&#60</button>
+					<button class="next">&#62</button>
+				</div>
+			</div>
+			<div class="cuerpo">
+				{% block cuerpo %}Aquí va el cuerpo{% endblock %}
+			</div>
+			<aside>
+				<h2>Últimas noticias</h2>
+				{% for noti in ultimas_noticias %}
+				<p><h3><a href="{% url 'noticia' noti.pk %}">{{ noti.titulo }}</a></h3></p>
+				<p>Publicado por {{ noti.usuario_publicador }} hace {{ noti.fecha_publicacion|timesince }}</p>
+				<hr />
+				{% endfor %}
+			</aside>
+		</div>
+		{% include "footer.html" %}
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+		window.jQuery || document.write('<script src="{% static "js/vendor/jquery-1.10.2.min.js" %}"><\/script>');
+		</script>
+		<script src="{% static "js/plugins.js" %}"></script>
+		<script src="{% static "js/main.js" %}"></script>
+
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+		( function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] = function() {
+				(b[l].q = b[l].q || []).push(arguments);
+			});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r);
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+		</script>
+	</body>
+	</html>

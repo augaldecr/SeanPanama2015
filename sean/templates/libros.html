@@ -1,0 +1,21 @@
+{% extends  "base.html" %}
+
+{% block tittle %}Nuestros cursos{% endblock %}
+
+{% block cuerpo %}
+    <h1>Nuestros cursos</h1>
+
+{% for nivel in niveles %}
+    <h2>{{nivel.nivel}}</h2>
+    {% for libro in nivel.libros.all %}
+        <article class="libros">
+            <div>
+                <h3>{{libro.nombre}}</h3>
+                <p>{{libro.descripcion|slice:":140"}}...</p>
+            </div>
+            <div class="portada"><img src="{{ MEDIA_URL }}{{libro.portada}}"/></div>
+            <div><a href="{% url 'curso' libro.pk %}">Leer descripción completa</a></div>
+        </article>
+	{% endfor %}
+{% endfor  %}
+{% endblock %}

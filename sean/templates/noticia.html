@@ -1,0 +1,33 @@
+{% extends  "base.html" %}
+
+{% block tittle %}Noticias y actividades{% endblock %}
+
+{% block cuerpo %}
+<h1>{{noticia.titulo}}</h1>
+<article>
+	<p>{{noticia.contenido}}</p>
+	<p>{{noticia.usuario_publicador}}, {{noticia.fecha_publicacion|timesince}}</p>
+	<hr />
+	{% for comentario in noticia.comentario_set.all %}
+		{% if comentario.aprobacion == True %}
+			<div class="comentario">
+				<p>{{comentario.contenido}}</p>
+				<p>Comentario por {{comentario.comentador}}, hace {{comentario.fecha_comentario|timesince}}</p>
+			</div>
+		{% endif %}
+	{% endfor %}
+	<fieldset>
+	<legend><h3>Enviar comentario</h3></legend>
+		<div class="tabla">
+			<form action="" method="post">{% csrf_token %}
+				{{form.as_p}}
+				<div class="tabla_botones">
+					<input type="reset" value="Borrar">
+					<input type="submit" value="Enviar">
+				</div>
+			</form>
+		</div>
+		<p>Los comentarios son enviados y deben esperar aprobación de parte de Sean Panamá</p>
+</fieldset>
+</article>
+{% endblock %}

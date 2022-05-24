@@ -1,0 +1,568 @@
+$verde : #007070;
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?60580635');
+  src: url('../fonts/fontello.eot?60580635#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff?60580635') format('woff'),
+       url('../fonts/fontello.ttf?60580635') format('truetype'),
+       url('../fonts/fontello.svg?60580635#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+	color: #777;
+	font-family: 'Oxygen', sans-serif;
+	font-size: 1rem;
+	max-width: 100%;
+}
+
+body, html {
+	max-width: 100%;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+aside {
+	padding-left: 1%;
+	font-size: 0.9rem;
+	vertical-align: top;
+	width: 23%;
+	h2, h3 a {
+		color: $verde;
+	}
+}
+
+aside, header, nav, footer , .cuerpo, .slider_top {
+	padding: 0.5rem;
+}
+
+aside, .cuerpo {
+	display: inline-block;
+}
+
+footer {
+	background-color: #777;
+	border-top: 1rem solid $verde;
+	color: white;
+	min-height: 15rem;
+	margin-top: 2rem;
+	text-align: center;
+	
+	div {
+		color: #EEE;
+		display: inline-block;
+		margin-bottom: 2rem;
+		text-align: left;
+		vertical-align: top;
+		width: 25%;
+
+		h3 {
+			color: #EEE;
+		}
+
+		p {
+			color: #999;
+		}
+	}
+
+	.versiculo {
+		width: 70%;
+	}
+
+	.design {
+		border-top: thin solid #999;
+		color: #999;
+		font-size: 0.8rem;
+		margin-top: 3rem;
+		padding-top: 0.5rem;
+	}
+}
+
+fieldset {
+	margin-top: 1.5rem;
+	padding: 1rem
+}
+
+h1, h2 {
+	color: $verde; 
+}
+
+header {
+	a {
+		display: inline-block;
+		figure {
+			img {
+				height: auto;
+				margin: 0.1rem;
+				width: 6rem;
+			}
+			figcaption {
+				font-size: 0.7rem;
+				text-align: center;
+			}
+		}
+	}
+
+	h2 {
+		border-left: solid #888;
+		display: inline-block;
+		font-size: 2.2rem;
+		padding: 0.5rem;
+		padding-left: 0.5rem;
+		vertical-align: bottom;
+	}
+
+	img, .social {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.social {
+		float: right;
+		height: 100%;
+		position: relative;
+		ul {
+			li {
+				display: inline-block;
+				a {
+
+				}
+			}
+		}
+	}
+
+}
+
+input, textarea {
+	border: thin solid #888;
+	color: #006060;
+}
+
+nav {
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	ul {
+		border: thin solid #888;
+		margin: 0;
+		padding: 0;
+		li {
+			border-right: thin solid #888;
+			display: inline-block;
+			height: 2.5rem;
+			margin-left: -4px;
+			text-align: center;
+			width: 12%;
+			a {
+				display: inline-block;
+				padding-bottom: 0.7rem;
+				padding-top: 0.7rem;
+				text-align: center;
+			}
+		}
+	}
+}
+
+textarea {
+	resize: none;
+}
+
+.comentario {
+	border: thin solid #008080;
+	border-radius: 0.2rem;
+	border-top: none;
+	box-shadow: 0.1em 0.1em 0.2rem gray;
+	margin-left: 10%;
+	padding: 1rem;
+	padding-bottom: 0.1rem;
+	padding-top: 0.1rem;
+}
+
+.cuerpo {
+	padding-left: 2rem;
+	padding-right: 2rem;
+	text-align: justify;
+	width: 66%;
+}
+
+.libro {
+    display: block;
+    padding: 0.5rem;
+    position:relative;
+    vertical-align:text-top;
+    div {
+        display:inline-block;
+        &:first-child{
+            width:75%;
+            p {
+                min-height: 15rem;
+                padding: 0.7rem;
+                vertical-align: super;
+            }
+        }
+    
+        &:nth-child(2){
+            position:absolute;
+            top: 5%;
+            width:23%;
+        }
+    }
+  
+    img{
+        float:right;
+        vertical-align: baseline;
+    }
+}
+
+.libros {
+    border: thin solid #777;
+    display: inline-block;
+    height: 16rem;
+    padding: 0.5rem;
+    overflow:hidden;
+    position:relative;
+    vertical-align:text-top;
+    width:45%;    
+    div {
+        display:inline-block;
+        &:first-child{
+            width:75%;
+            h3 {
+            	color: $verde;
+                text-align:center;
+            }
+            p {
+                padding: 0.7rem;
+            }
+        }
+    
+        &:nth-child(2){
+            position:absolute;
+            top: 35%;
+            width:23%;
+        }
+        &:nth-child(3){
+            padding-left: 0.7rem;
+        }
+    }
+
+    a {
+    	color: $verde !important;
+    }
+    
+    img{
+        float:right;
+        vertical-align: baseline;
+    }
+}
+
+.mas {
+	color: #008080;
+	cursor: pointer;
+	float: right;
+	position: relative;
+	text-decoration: none;
+}
+
+.slider_container {
+    margin: 0 auto;
+    margin-bottom: 0;
+    margin-top: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    
+    .next, .prev{
+        background-color: $verde;
+        border: none;
+        border-radius: 3rem;
+        color: #f7f7f7;
+        font-size: 2.7rem;
+        height: 3rem;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        vertical-align: middle;
+        width: 3rem;
+    }
+    
+    .next {
+        right: 0rem;
+    }
+    
+    .prev{
+        left: 0rem;
+    }
+    
+    .slide_container {
+        white-space: nowrap;
+        
+        .slide {
+            background-position: 20%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            display: inline-block;
+            margin-right: -4px;
+            vertical-align: top;
+        }
+    }
+}
+
+.posicionado {
+	color: black;
+}
+
+.tabla {
+	display: table;
+	p {
+		display: table-row;
+		label, input, textarea {
+			display: table-cell;
+			margin: 0.2rem;
+			width: 5rem;
+		}
+		input, textarea {
+			width: 24rem;
+		}
+	}
+}
+
+.tabla_botones{
+	display: table;
+	float: right;
+	input {
+		display: table-cell;
+		margin: 0.3rem;
+		padding: 0.3rem;
+	}
+}
+
+.top_green {
+	border-top: 1rem solid $verde;
+	max-width: 100%;
+	width: 100%;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1440px;
+}
+
+#login {
+	width: 40%;
+	input {
+		width: 9rem;
+	}
+	label {
+		width: 9rem;
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 965px) {
+	aside{
+		width: 20%;
+	}
+
+	header {
+		a figure img {
+			width: 5.5rem;
+		}
+		h2{
+			font-size: 1.6rem;
+		}
+	}
+
+	nav {
+		ul {
+			width: 100%;
+			li {
+				width: 15%;
+			}
+		}
+	}
+	.libros {
+			height: 19rem;
+	}
+}
+
+@media screen and (min-width: 640px) and (max-width: 799px) {
+	aside{
+		display: none;
+	}
+
+	header {
+		a figure img {
+			width: 5rem;
+		}
+		h2 {
+			font-size: 1.2rem;
+		}
+	}
+	nav {
+		ul {
+			width: 100%;
+			li {
+				width: 18%;
+				a {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+	.cuerpo {
+		display: block;
+		margin: 0 auto;
+		width: 80%;
+	}
+
+	.libros {
+			height: 19rem;
+	}
+}
+
+@media screen and (min-width: 584px) and (max-width: 639px){
+	aside{
+		display: none;
+	}
+
+	header {
+		a {
+			figure img {
+				width: 4rem;
+			}
+		}
+		h2 {
+			font-size: 1rem;
+		}
+	}
+	nav {
+		ul {
+			width: 100%;
+			li {
+				box-sizing: border-box;
+				margin-right: none;
+				width: 20%;
+				a {
+					font-size: 0.6rem;
+				}
+			}
+		}
+	}
+	.cuerpo {
+		display: block;
+		margin: 0 auto;
+		width: 80%;
+	}
+
+	.libros {
+			height: 21rem;
+	}
+}
+
+@media screen and (min-width: 240px) and (max-width: 583px) {
+	aside{
+		display: none;
+	}
+
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+	header {
+		a {
+			figure img {
+				width: 3.5rem;
+			}
+		}
+		h2 {
+			font-size: 0.95rem;
+            width: 60%;
+		}
+	}
+
+	nav {
+		ul {
+			width: 100%;
+			li {
+				border: thin solid $verde;
+				display: block;
+				margin-right: -4px;
+				width: 100%;
+				a {
+					font-size: 1.3rem;
+                    text-align: center;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	fieldset {
+
+	}
+
+	footer {
+		height: 20rem;
+		h3 {
+            font-size: 1rem;    
+        }
+        div{
+			display:block;  
+			width: 100%;
+			margin-bottom: 0;
+		}
+		.versiculo, .disenho {
+			p {
+				text-align: center;
+                width: 100%;
+			}
+		}
+	}
+	.cuerpo {
+		display: block;
+		margin: 0 auto;
+		width: 80%;
+	}
+
+    .libro {
+        div {
+            &:first-child{
+            width:100%;
+            }
+            &:nth-child(2){
+                display:none;
+            }
+        }
+    }
+    
+    .libros {
+    	height: 13rem;
+        margin: 0 auto;
+        width: 95%;
+        div {
+            &:first-child{
+                width:100%;
+            }
+            &:nth-child(2){
+                display:none;
+            }
+        }
+    }
+    
+	.tabla {
+		p {
+			display: block;
+			text-align: center;
+			input, textarea {
+				width: 80%;
+			}
+		}
+	}
+    .slider_container {
+        display: none;
+    }
+}

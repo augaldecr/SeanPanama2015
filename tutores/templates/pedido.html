@@ -1,0 +1,18 @@
+{% extends "base_tutores.html" %}
+{% block titulo %}Historial de pedidos{% endblock %}
+{% block cuerpo %}
+<fieldset>
+	<legend><h1>Historial de pedidos</h1></legend>
+	<h1>Pedido # {{ pedido.pk}} realizado en fecha {{pedido.fecha|date}}</h1>
+	<h1>Total #{{ pedido.total }}</h1>
+	<article>
+	<hr />
+	{% for fila in fila_pedido %}
+			<div class="comentario">
+				<p>{{fila.libro}}</p>
+				<p>{{fila.cantidad}}</p>
+			</div>
+	{% endfor %}
+</article>
+</fieldset>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends  "base.html" %}
+
+{% block tittle %}Nuestros cursos{% endblock %}
+
+{% block cuerpo %}
+    <h1>{{ libro.nombre }}</h1>
+		<article class="libro">
+			<div>
+                <p>{{libro.descripcion}}</p>
+            </div>
+            <div class="portada"><img src="{{ MEDIA_URL }}{{libro.portada}}"/></div>
+		</article>
+{% endblock %}

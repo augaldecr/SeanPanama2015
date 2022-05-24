@@ -1,0 +1,14 @@
+{% extends "base_tutores.html" %}
+{% block titulo %}Pagar pedidos{% endblock %}
+{% block cuerpo %}
+<fieldset>
+	<legend><h1>Pagar pedidos</h1></legend>
+	<ul>
+		{% for pedido in pedidos %}
+	    <li><a href="{{ pedido.pk }}">{{ pedido.fecha|date }} - {{ pedido.total }}</a></li>
+		{% empty %}
+    	<li>No hay pedidos pendientes de pago</li>
+		{% endfor %}
+	</ul>
+</fieldset>
+{% endblock %}

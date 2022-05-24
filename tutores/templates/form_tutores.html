@@ -1,0 +1,16 @@
+{% extends "base_tutores.html" %}
+{% block titulo %}{{titulo}}{% endblock %}
+{% block cuerpo %}
+<fieldset>
+	<legend><h1>{{ titulo }}</h1></legend>
+		<div class="tabla">
+			<form action="" method="post">{% csrf_token %}
+			{{form.as_p}}
+			<div class="tabla_botones">
+				<input type="reset" value="Borrar">
+				<input type="submit" value="Enviar">
+			</div>
+			</form>
+		</div>
+</fieldset>
+{% endblock %}
